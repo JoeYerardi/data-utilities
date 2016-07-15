@@ -33,3 +33,4 @@ with open('Data/FCSA 2015-16-p0001 - p51670.txt', 'r') as infile:
                     line_out_2 = '"{0}","{1}","{2}"\n'.format(
                         fund_num, bits[3], bits[5])
                     outfile.write(line_out_2)
+                    
