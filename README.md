@@ -10,3 +10,7 @@ I wrote this shell (Bash) script to take a csv file of payments from drug makers
 process_assessments.py
 
 I wrote this Python script to take a minimally formatted text file of annual parcel-level assessment (property tax) data and process it into a clean, comma-separated text file.
+
+process_cfd_lists.py
+
+I wrote this Python script to take a text file converted from a PDF listing community facility districts and process it into a clean, comma-separated text file.
