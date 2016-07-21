@@ -5,12 +5,16 @@ CONTENTS
 
 split_cadocs.sh
 
-I wrote this shell (Bash) script to take a csv file of payments from drug makers and medical device manufactures to California doctors that contained more than 1.1 million records and split it into multiple csv files of at most 200,000 records.
+This shell (Bash) script was written to take a csv file of payments from drug makers and medical device manufactures to California doctors that contained more than 1.1 million records and split it into multiple csv files of at most 200,000 records.
 
 process_assessments.py
 
-I wrote this Python script to take a minimally formatted text file of annual parcel-level assessment (property tax) data and process it into a clean, comma-separated text file.
+This Python script was written to take a minimally formatted text file of annual parcel-level assessment (property tax) data from the San Diego County Auditor and Controller and process it into a clean, comma-separated text file.
 
 process_cfd_lists.py
 
-I wrote this Python script to take a text file converted from a PDF listing community facility districts and process it into a clean, comma-separated text file.
+This Python script was written to take a text file converted from a PDF listing community facility districts from the San Diego County Auditor and Controller and process it into a clean, comma-separated text file.
+
+process_emissions.py
+
+This Python script was written to take a text file converted from a PDF listing emissions estimates from the San Diego Air Pollution Control District and process it into a clean, comma-separated text file.
