@@ -11,7 +11,7 @@ criteria_type_regex = re.compile(r'^(Pollutant|Contaminant)', re.IGNORECASE)
 pollutant_regex = re.compile(r'\d+\.\d+')
 
 with open('APCD_Emissions_Inventory_Report_2013.txt', 'r') as infile:
-    with open('outfile.csv', 'w') as outfile:
+    with open('emissions.csv', 'w') as outfile:
         # Write the headers to the outfile
         outfile.write('"Company Name", "Source ID", "Company Address", "Criteria Type", "Pollutant", "Annual Emissions", "Max Hourly Emissions"\n')
         # Iterate through the in-file line-by-line
