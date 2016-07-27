@@ -25,7 +25,7 @@ def geocode(address_text):
     'boundary.rect.max_lon': ca_max_lon})
     # Pass the JSON response to the variable data
     data = resp.json()
-    # Pass the data in the features key to the variables features
+    # Pass the data in the features key to the variable features
     features = data['features']
     # Create a blank list and pass it to the variable pt
     pt = {}
