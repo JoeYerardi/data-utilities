@@ -11,10 +11,6 @@ process_assessments.py
 
 This Python script was written to take a minimally formatted text file of annual parcel-level assessment (property tax) data from the San Diego County Auditor and Controller and process it into a clean, comma-separated text file.
 
-process_cfd_lists.py
-
-This Python script was written to take a text file converted from a PDF listing community facility districts from the San Diego County Auditor and Controller and process it into a clean, comma-separated text file.
-
 process_emissions.py
 
 This Python script was written to take a text file converted from a PDF listing emissions estimates from the San Diego Air Pollution Control District and process it into a clean, comma-separated text file.
