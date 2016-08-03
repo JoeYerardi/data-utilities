@@ -10,8 +10,8 @@ city_state_regex = re.compile(r'(.+)\s+Phone Number:')
 criteria_type_regex = re.compile(r'^(Pollutant|Contaminant)', re.IGNORECASE)
 pollutant_regex = re.compile(r'\d+\.\d+')
 
-with open('APCD_Emissions_Inventory_Report_2013.txt', 'r') as infile:
-    with open('emissions.csv', 'w') as outfile:
+with open('Emissions Reports/APCD_Emissions_Inventory_Report_2012.txt', 'r') as infile:
+    with open('2012 Emissions Data/emissions12.csv', 'w') as outfile:
         # Write the headers to the outfile
         outfile.write('"Company Name", "Source ID", "Company Address", "Criteria Type", "Pollutant", "Annual Emissions", "Max Hourly Emissions"\n')
         # Iterate through the in-file line-by-line
@@ -49,15 +49,37 @@ with open('APCD_Emissions_Inventory_Report_2013.txt', 'r') as infile:
             # Finally, search the current line for pollutants data and pass what is
             # returned to the variable pollutant_match
             pollutant_match = pollutant_regex.search(line)
-            # Then, determine if the current line has pollutants data
+            # Next, determine if the current line has pollutants data
             if pollutant_match:
                 # Split the line into columns based on two or more white space characters
                 # and pass it to the variable result
                 result = re.split(r'\s{2,}', line)
-                # Pass each column to its appropriate variable
+                # Pass the pollutant name to the variable pollutant
                 pollutant = result[0]
-                annual = result[1]
-                hourly = result[2]
+                # Then, determine if the current line has only three columns
+                if len(result) == 3:
+                    # Pass the second column to the variable annual
+                    annual = result[1]
+                    # Pass the third column to the variable hourly
+                    hourly = result[2]
+                # Then, determine if the current line has more than three columns
+                elif len(result) > 3:
+                    # Then, determine if the second column is equal to the less than character
+                    if result[1] == '<':
+                        # Concatenate the second and third columns and pass the result
+                        # to the variable annual
+                        annual = result[1] + ' ' + result[2]
+                    # Otherwise, pass the second column to the variable annual
+                    else:
+                        annual = result[1]
+                    # Then, determine if the fourth column is equal to the less than character
+                    if result[3] == '<':
+                        # Concatenate the fourth and fifth columns and pass the result
+                        # to the variable hourly
+                        hourly = result[3] + ' ' + result[4]
+                    # Otherwise, pass the fourth column to the variable hourly
+                    else:
+                        hourly = result[3]
                 # Pass the company name, source ID, address, criteria type, pollutant name,
                 # annual data and hourly data to the variable line_out
                 line_out = '"{0}", "{1}", "{2}", "{3}", "{4}", "{5}", "{6}"\n'.format(name,
